@@ -49,6 +49,9 @@ function fighting(){
         }else if (moveVars.indexOf(playerMove) === moveVars.indexOf(compMove) - 1){
             plrPoints++; 
             alert(`You won this round: Current count is ${player}: ${plrPoints} - Computer: ${compPoints}`);
+        }else if (moveVars.lastIndexOf(playerMove) === moveVars.indexOf(compMove) + 1){
+            compPoints++;
+            alert(`Computer won this round: Current count is ${player}: ${plrPoints} - Computer: ${compPoints}`);
         }else if (moveVars.lastIndexOf(playerMove) === moveVars.indexOf(compMove) + 2){
             plrPoints++;
             alert(`You won this round: Current count is ${player}: ${plrPoints} - Computer: ${compPoints}`);
