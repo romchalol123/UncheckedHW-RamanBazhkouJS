@@ -1,8 +1,12 @@
+const moveVars = ['rock', 'scissors', 'paper', 'rock'];
+
+let player = enterUserName();
+
 function enterUserName(){
     let userName = prompt('Please, enter your name');
-    if (userName === '' || userName === ' ' || userName === null){
+    if (!userName){
         return 'User';
-    }else{
+    } else {
         return userName;
     }
 }
@@ -21,14 +25,16 @@ function compChoice(){
 }
 
 function playerChoice(){
-    let choice = prompt('Rock, Scissors, Paper... Please make your move');
+    let choiceRequest = prompt('Rock, Scissors, Paper... Please make your move');
+
+    let choice = choiceRequest.trim().toLowerCase();
 
     if(choice === null){
         alert('You aborted this game. To start new game just refresh the page.');
-        process.abort();
-    }else if (!!moveVars.includes(choice)){
+        return;
+    } else if (!!moveVars.includes(choice)){
         return choice;
-    } else{
+    } else {
         return playerChoice();
     }
 }
@@ -38,21 +44,27 @@ function fighting(){
     let compPoints = 0;    
     
     while (plrPoints < 3 && compPoints < 3){
-        let playerMove = playerChoice();
-        let compMove = compChoice();
         
+        let playerMove = playerChoice();
+        
+        if (typeof playerMove !== 'string'){
+            return;
+        }
+
+        let compMove = compChoice();
+
         if (playerMove === compMove){
             alert('Make an another move. You have the same result as the computer.');
-        }else if (moveVars.indexOf(playerMove) === moveVars.indexOf(compMove) + 1){
+        } else if (moveVars.indexOf(playerMove) === moveVars.indexOf(compMove) + 1){
             compPoints++;
             alert(`Computer won this round: Current count is ${player}: ${plrPoints} - Computer: ${compPoints}`);
-        }else if (moveVars.indexOf(playerMove) === moveVars.indexOf(compMove) - 1){
+        } else if (moveVars.indexOf(playerMove) === moveVars.indexOf(compMove) - 1){
             plrPoints++; 
             alert(`You won this round: Current count is ${player}: ${plrPoints} - Computer: ${compPoints}`);
-        }else if (moveVars.lastIndexOf(playerMove) === moveVars.indexOf(compMove) + 1){
+        } else if (moveVars.lastIndexOf(playerMove) === moveVars.indexOf(compMove) + 1){
             compPoints++;
             alert(`Computer won this round: Current count is ${player}: ${plrPoints} - Computer: ${compPoints}`);
-        }else if (moveVars.lastIndexOf(playerMove) === moveVars.indexOf(compMove) + 2){
+        } else if (moveVars.lastIndexOf(playerMove) === moveVars.indexOf(compMove) + 2){
             plrPoints++;
             alert(`You won this round: Current count is ${player}: ${plrPoints} - Computer: ${compPoints}`);
         }
@@ -69,16 +81,21 @@ function fighting(){
     return message;
 }
 
-const moveVars = ['rock', 'scissors', 'paper', 'rock'];
-let player = enterUserName();
-let game = fighting();
+function gameStarted() {
 
-let newGameConfirm = confirm('Do you want to start new game?');
-
-if (!!newGameConfirm){
     fighting();
-} else{
-    process.abort();
+
+    if(typeof fighting !== 'string'){
+        return;
+    }
+
+    let newGameConfirm = confirm('Do you want to start new game?');
+
+    if (!!newGameConfirm){
+        fighting();
+    } else {
+        return;
+    }
 }
 
-
+gameStarted();
