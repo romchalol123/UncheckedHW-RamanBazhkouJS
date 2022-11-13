@@ -7,11 +7,16 @@ fetch('https://dummyjson.com/products')
     for (let num = 0; num < productsList.length; num++) {
       const card = document.createElement('div');
       card.className = 'card';
-      card.style.cssText = ` width: 23%;
-        padding: 0;
-        overflow: hidden;
-        margin: 7px;
-      `;
+      card.style.padding = '0';
+      card.style.overflow = 'hidden';
+
+      if (window.innerWidth < 768) {
+          card.style.width = '95%';
+          card.style.margin = '5px auto';
+      } else if (window.innerWidth >= 768) {
+        card.style.width = '23%';
+        card.style.margin = '7px';
+      }
 
       const header = document.createElement('div');
       header.style.cssText = ` background: url('${productsList[num].thumbnail}') top center;
@@ -51,11 +56,8 @@ fetch('https://dummyjson.com/products')
 
       window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
-          card.style.cssText = ` width: 23%;
-            padding: 0;
-            overflow: hidden;
-            margin: 7px;
-          `;
+          card.style.width = '23%';
+          card.style.margin = '7px';
         } else if (window.innerWidth < 768) {
           card.style.width = '95%';
           card.style.margin = '5px auto';
