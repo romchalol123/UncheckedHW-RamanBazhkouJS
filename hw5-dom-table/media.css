@@ -1,0 +1,14 @@
+@import url('index.css');
+
+@media all and (max-width: 767px){
+
+    .card{
+        width: 95%;
+        margin: 5px auto;
+    }
+
+    .card div:first-child{
+        height: 220px;
+    }
+
+}

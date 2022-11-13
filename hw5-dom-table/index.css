@@ -1,0 +1,28 @@
+.title {
+  margin: 50px 0 50px;
+}
+
+.card{
+  width: 23%;
+  padding: 0;
+  overflow: hidden;
+  margin: 7px;
+}
+
+.card div:first-child{
+  height: 150px;
+  background-size:cover;
+  background-position: center;
+}
+
+.card-body{
+  padding: 10px;
+}
+
+.card-footer{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  font-size: 12px;
+  padding: 5px;
+}
