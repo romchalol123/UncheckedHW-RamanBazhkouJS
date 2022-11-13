@@ -7,12 +7,21 @@ fetch('https://dummyjson.com/products')
     for (let num = 0; num < productsList.length; num++) {
       const card = document.createElement('div');
       card.className = 'card';
+      card.style.cssText = ` width: 23%;
+        padding: 0;
+        overflow: hidden;
+        margin: 7px;
+      `;
 
       const header = document.createElement('div');
-      header.style.backgroundImage = `url('${productsList[num].thumbnail}')`;
+      header.style.cssText = ` background: url('${productsList[num].thumbnail}') top center;
+        height: 150px;
+        background-size:cover;
+      `;
 
       const cardBody = document.createElement('div');
       cardBody.className = 'card-body';
+      cardBody.style.padding = '10px';
 
       const title = document.createElement('h5');
       title.textContent = `${productsList[num].title}`;
@@ -22,6 +31,12 @@ fetch('https://dummyjson.com/products')
 
       const footer = document.createElement('div');
       footer.className = 'card-footer';
+      footer.style.cssText = ` display: flex;
+        justify-content: space-between;
+        margin: 10px;
+        font-size: 12px;
+        padding: 5px;
+      `;
 
       const price = document.createElement('p');
       price.textContent = `Price: ${productsList[num].price}$`;
@@ -33,5 +48,18 @@ fetch('https://dummyjson.com/products')
       cardBody.append(title, description);
       card.append(header, cardBody, footer);
       wrapper.append(card);
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+          card.style.cssText = ` width: 23%;
+            padding: 0;
+            overflow: hidden;
+            margin: 7px;
+          `;
+        } else if (window.innerWidth < 768) {
+          card.style.width = '95%';
+          card.style.margin = '5px auto';
+        }
+      });
     }
   });
