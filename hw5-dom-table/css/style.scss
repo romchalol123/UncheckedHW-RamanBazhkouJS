@@ -1,0 +1,50 @@
+.title {
+    margin: 50px 0 50px;
+}  
+
+.card{
+    overflow: hidden;
+    padding: 0;
+    width: 23%;
+    margin: 7px;
+
+    .header{
+        height: 150px;
+        overflow: hidden;
+
+        .card-img-top{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .card-body{
+        padding: 10px;
+
+        p{
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+
+    .card-footer{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+        font-size: 12px;
+        padding: 5px;
+
+        .footer-info{
+            margin: 0 3px 8px;
+            font-weight: 700;
+
+            &:last-child{
+                text-align: right;
+            }
+        }
+    }
+
+    button{
+        
+    }
+}

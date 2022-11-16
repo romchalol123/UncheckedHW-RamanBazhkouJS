@@ -1,0 +1,23 @@
+@import url(style.css);
+
+
+@media all and (max-width: 990px){
+    .card-footer{
+        height: 55px;
+    }
+}
+
+@media all and (max-width: 768px){
+    .card{
+      width: 95%;
+      margin: 5 auto;
+    }
+  
+    .header{
+      height: 220px;
+    }
+
+    .card-footer{
+        height: auto;
+    }
+}
