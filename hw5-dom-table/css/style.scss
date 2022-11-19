@@ -2,15 +2,34 @@
     margin: 50px 0 50px;
 }  
 
+.navbar{
+    .container-fluid{
+        .navbar-brend{
+            font-weight: 500;
+            font-size: 24px;
+            margin: unset;
+        }
+
+        .d-flex{
+            .me-2{
+                width: auto;
+                margin-left: 0.5em;
+            }
+        }
+    }    
+}
+
 .card{
     overflow: hidden;
     padding: 0;
     width: 23%;
     margin: 7px;
+    border-radius: 20px;
 
-    .header{
+    .card-header{
         height: 150px;
         overflow: hidden;
+        padding: 0;
 
         .card-img-top{
             height: 100%;
@@ -21,7 +40,7 @@
     .card-body{
         padding: 10px;
 
-        p{
+        .card-body-descr{
             font-size: 14px;
             font-weight: 500;
         }
@@ -34,7 +53,7 @@
         font-size: 12px;
         padding: 5px;
 
-        .footer-info{
+        .card-footer-info{
             margin: 0 3px 8px;
             font-weight: 700;
 
@@ -44,7 +63,8 @@
         }
     }
 
-    button{
-        
+    .btn-primary{
+        margin: 0 10px 10px;
+        border-radius: 15px;
     }
 }

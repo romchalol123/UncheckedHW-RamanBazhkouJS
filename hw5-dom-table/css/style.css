@@ -1,20 +1,30 @@
 .title {
   margin: 50px 0 50px; }
 
+.navbar .container-fluid .navbar-brend {
+  font-weight: 500;
+  font-size: 24px;
+  margin: unset; }
+.navbar .container-fluid .d-flex .me-2 {
+  width: auto;
+  margin-left: 0.5em; }
+
 .card {
   overflow: hidden;
   padding: 0;
   width: 23%;
-  margin: 7px; }
-  .card .header {
+  margin: 7px;
+  border-radius: 20px; }
+  .card .card-header {
     height: 150px;
-    overflow: hidden; }
-    .card .header .card-img-top {
+    overflow: hidden;
+    padding: 0; }
+    .card .card-header .card-img-top {
       height: 100%;
       object-fit: cover; }
   .card .card-body {
     padding: 10px; }
-    .card .card-body p {
+    .card .card-body .card-body-descr {
       font-size: 14px;
       font-weight: 500; }
   .card .card-footer {
@@ -23,10 +33,13 @@
     margin: 10px;
     font-size: 12px;
     padding: 5px; }
-    .card .card-footer .footer-info {
+    .card .card-footer .card-footer-info {
       margin: 0 3px 8px;
       font-weight: 700; }
-      .card .card-footer .footer-info:last-child {
+      .card .card-footer .card-footer-info:last-child {
         text-align: right; }
+  .card .btn-primary {
+    margin: 0 10px 10px;
+    border-radius: 15px; }
 
 /*# sourceMappingURL=style.css.map */
