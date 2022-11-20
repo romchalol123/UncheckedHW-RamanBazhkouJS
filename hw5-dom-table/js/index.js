@@ -1,4 +1,8 @@
 const wrapper = document.querySelector('.wrapper');
+const navbar = document.querySelector('.navbar');
+const headerform = document.querySelector('#header-form');
+const searchMenu = document.querySelector('.searchMenu');
+
 let cartSum = 0;
 
 fetch('https://dummyjson.com/products')
@@ -71,39 +75,13 @@ function createCatalog(productsList){
   })
 }
 
-function createNavbar(){
-  const navbar = createElement('nav', null, ['navbar','bg-light'], null);
-  const container = createElement('div', null, ['container-fluid'], null);
-  const logo = createElement('p', null, ['navbar-brend'], 'Our shop');
-  const form = createElement('form', { property:'role', value: 'search'}, ['d-flex'], null);
-  const cartBtn = createElement('button', null, ['btn', 'btn-success'], `Your cart - ${cartSum}$`);
+function createCartBTN(cartSum){
+  const button = createElement('button', { property: 'type', value: 'button' }, ['btn', 'btn-success'], `Your cart - ${cartSum}$`);
 
-  const searchInpAttr = [
-    {
-      property: 'type',
-      value: 'search'
-    },
-    {
-      property: 'placeholder',
-      value: 'Search'
-    },
-    {
-      property: 'aria-label',
-      value: 'Search'
-    }
-  ]
-  const searchInp = createElement('input', searchInpAttr, ['form-control', 'me-2'], null);
-
-  const searchSubmit = createElement('button', { property: 'type', value: 'submit'}, ['btn', 'btn-outline-success'], 'Submit');
-
-  form.append(cartBtn, searchInp, searchSubmit);
-  container.append(logo, form);
-  navbar.append(container);
-
-  document.body.prepend(navbar);
+  return button
 }
 
-createNavbar();
+searchMenu.prepend(createCartBTN(cartSum));
 
 
 

@@ -14,8 +14,34 @@
   <script defer src="js/index.js"></script>
 </head>
 <body>
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Navbar</span>
+
+      <button type="button" class="btn btn-outline-secondary" data-bs-toggle="button" aria-pressed="true">Active toggle button</button>
+
+      <div class="searchMenu">
+        <form class="d-flex" role="search" id="header-form">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="cart">
+    <div class="cart-hat">
+      <h2>Your order</h2>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="goods-list"></div>
+
+    <button type="button" class="btn btn-primary">Order</button>
+  </div>
 
   <div class="container">
+   
+
     <h1 class="title">Our Products</h1>
 
     <div class="wrapper row justify-content-center">

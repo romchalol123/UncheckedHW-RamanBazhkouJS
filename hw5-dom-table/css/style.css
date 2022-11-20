@@ -1,44 +1,65 @@
 .title {
-  margin: 50px 0 50px; }
+  margin: 100px 0 50px; }
 
-.navbar .container-fluid .navbar-brend {
-  font-weight: 500;
-  font-size: 24px;
-  margin: unset; }
-.navbar .container-fluid .d-flex .me-2 {
-  width: auto;
-  margin-left: 0.5em; }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  z-index: 1; }
+  .navbar .container-fluid .navbar-brend {
+    font-weight: 500;
+    font-size: 24px;
+    margin: unset; }
+  .navbar .container-fluid .d-flex {
+    display: flex;
+    justify-content: flex-end; }
+    .navbar .container-fluid .d-flex .me-2 {
+      width: auto;
+      margin-left: 0.5em; }
 
-.card {
+.cart {
+  display: none;
+  content: '';
+  background-color: aqua;
+  width: 768px;
+  height: 100%;
+  position: fixed;
+  top: 55px;
+  left: 0;
+  z-index: 1; }
+
+.container .wrapper .card {
   overflow: hidden;
   padding: 0;
   width: 23%;
   margin: 7px;
   border-radius: 20px; }
-  .card .card-header {
+  .container .wrapper .card .card-header {
     height: 150px;
     overflow: hidden;
     padding: 0; }
-    .card .card-header .card-img-top {
+    .container .wrapper .card .card-header .card-img-top {
       height: 100%;
       object-fit: cover; }
-  .card .card-body {
+  .container .wrapper .card .card-body {
     padding: 10px; }
-    .card .card-body .card-body-descr {
+    .container .wrapper .card .card-body .card-body-descr {
       font-size: 14px;
       font-weight: 500; }
-  .card .card-footer {
+  .container .wrapper .card .card-footer {
     display: flex;
     justify-content: space-between;
     margin: 10px;
     font-size: 12px;
     padding: 5px; }
-    .card .card-footer .card-footer-info {
+    .container .wrapper .card .card-footer .card-footer-info {
       margin: 0 3px 8px;
       font-weight: 700; }
-      .card .card-footer .card-footer-info:last-child {
+      .container .wrapper .card .card-footer .card-footer-info:last-child {
         text-align: right; }
-  .card .btn-primary {
+  .container .wrapper .card > .btn-primary {
     margin: 0 10px 10px;
     border-radius: 15px; }
 
