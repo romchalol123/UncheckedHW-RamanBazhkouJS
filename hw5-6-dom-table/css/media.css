@@ -8,21 +8,21 @@
 }
 
 @media all and (max-width: 854px){
-  .navbar .container-fluid{
+  .header .navbar .container-fluid{
     flex-direction: column;
   }
 
-  .navbar .container-fluid .navbar-head{
+  .header .navbar .container-fluid .navbar-head{
     width: 100%;
     justify-content: space-between;
   }
 
-  .navbar .container-fluid .navbar-head .btn-outline-secondary{
+  .header .navbar .container-fluid .navbar-head .btn-outline-secondary{
     display: block;
     justify-self: flex-start;
   }
 
-  .navbar .container-fluid .search-menu{
+  .header .navbar .container-fluid .search-menu{
     display: none;
     width: 100%;
   }
@@ -51,6 +51,8 @@
         height: auto;
     }
 
-
+    .header #cart{
+      width: 100%;
+    }
 
 }

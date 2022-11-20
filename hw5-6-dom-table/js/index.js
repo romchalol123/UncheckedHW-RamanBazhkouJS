@@ -1,6 +1,7 @@
 const wrapper = document.querySelector('.wrapper');
 const headerform = document.querySelector('#header-form');
 const searchMenu = document.querySelector('.search-menu');
+const cart = document.querySelector('#cart');
 
 let cartSum = 0;
 
@@ -78,6 +79,10 @@ function createCartBTN(cartSum){
   const button = createElement('button', { property: 'type', value: 'button' }, ['btn', 'btn-success'], `Your cart - ${cartSum}$`);
 
   return button
+}
+
+function createCartList(){
+  
 }
 
 searchMenu.prepend(createCartBTN(cartSum));

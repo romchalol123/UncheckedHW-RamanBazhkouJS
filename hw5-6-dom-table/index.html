@@ -14,39 +14,39 @@
   <script defer src="js/index.js"></script>
 </head>
 <body>
-  <nav class="navbar bg-light">
-    <div class="container-fluid">
-      <div class="navbar-head">
-        <span class="navbar-brand mb-0 h1">Navbar</span>
-
-        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="button" aria-pressed="true" id="context-menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-          </svg>
-        </button>
+  <div class="header">
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <div class="navbar-head">
+          <span class="navbar-brand mb-0 h1">Navbar</span>
+  
+          <button type="button" class="btn btn-outline-secondary" data-bs-toggle="button" aria-pressed="true" id="context-menu" onclick="showContextMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          </button>
+        </div>
+  
+        <div class="search-menu">
+          <form class="d-flex" role="search" id="header-form">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
       </div>
-
-      <div class="search-menu">
-        <form class="d-flex" role="search" id="header-form">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+    </nav>
+  
+    <div id="cart">
+      <div class="cart-hat">
+        <h2>Your order</h2>
+        <button type="button" class="btn-close" aria-label="Close"></button>
       </div>
+  
+      <button type="button" class="btn btn-primary">Order</button>
     </div>
-  </nav>
-
-  <div class="cart">
-    <div class="cart-hat">
-      <h2>Your order</h2>
-      <button type="button" class="btn-close" aria-label="Close"></button>
-    </div>
-    <div class="goods-list"></div>
-
-    <button type="button" class="btn btn-primary">Order</button>
   </div>
 
   <div class="container">
-   
 
     <h1 class="title">Our Products</h1>
 

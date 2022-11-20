@@ -2,58 +2,71 @@
     margin: 100px 0 50px;
 }  
 
-.navbar{
+.header{
+    background: rgba(0, 0, 0, 0.3);
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 1;
 
-    .container-fluid{
-        display: flex;
-        justify-content: space-between;
-
-        .navbar-head{
+    .navbar{
+        height: 55px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    
+        .container-fluid{
             display: flex;
             justify-content: space-between;
-
-            .btn-outline-secondary{
-                padding: 5px;
-                display: none;
-            }
-
-            .navbar-brend{
-                font-weight: 500;
-                font-size: 24px;
-            }
-        }
-
-        .search-menu{
-            display: flex;
-
-            .d-flex{
-                display: flex;
-                justify-content:center;
     
-                .me-2{
-                    width: auto;
-                    margin-left: 0.5em;
+            .navbar-head{
+                display: flex;
+                justify-content: space-between;
+
+                .btn-outline-secondary{
+                    padding: 4.5px 5px 5px;
+                    display: none;
+                }
+    
+                .navbar-brend{
+                    font-weight: 500;
+                    font-size: 24px;
                 }
             }
-        }
-    }    
-}
+    
+            .search-menu{
+                display: flex;
+    
+                .d-flex{
+                    display: flex;
+                    justify-content:center;
+        
+                    .me-2{
+                        width: auto;
+                        margin-left: 0.5em;
+                    }
+                }
+            }
+        }    
+    }
 
-.cart{
-    display: none;
-    content: '';
-    background-color: aqua;
-    width: 768px;
-    height: 100%;
-    position: fixed;
-    top: 55px;
-    left: 0;
-    z-index: 1;
+    #cart{
+        width: 768px;
+        height: 100vh;
+        background: rgb(248, 249, 251);
+        padding: 40px 15px 15px;
+
+        .cart-hat{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn{
+            width: 100%;
+        }
+    }
 }
 
 .container{
