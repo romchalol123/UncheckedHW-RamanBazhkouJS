@@ -1,7 +1,6 @@
 const wrapper = document.querySelector('.wrapper');
-const navbar = document.querySelector('.navbar');
 const headerform = document.querySelector('#header-form');
-const searchMenu = document.querySelector('.searchMenu');
+const searchMenu = document.querySelector('.search-menu');
 
 let cartSum = 0;
 
