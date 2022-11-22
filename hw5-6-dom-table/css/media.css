@@ -1,58 +1,38 @@
 @import url(style.css);
 
+@media all and (max-width: 864px) {
+    .header .navbar .container-fluid .btn-outline-secondary{
+        display: block;
+    }
 
-@media all and (max-width: 990px){
-    .card-footer{
-        height: 55px;
+    .header .navbar .container-fluid .context-menu{
+        display: none;
+        width: 100vw;
+    }
+
+    .header .navbar .container-fluid .context-menu .btn-success{
+        margin: 0.5em;
+        margin-left: 0;
     }
 }
 
-@media all and (max-width: 854px){
-  .header .navbar .container-fluid{
-    flex-direction: column;
-  }
-
-  .header .navbar .container-fluid .navbar-head{
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .header .navbar .container-fluid .navbar-head .btn-outline-secondary{
-    display: block;
-    justify-self: flex-start;
-  }
-
-  .header .navbar .container-fluid .search-menu{
-    display: none;
-    width: 100%;
-  }
-
-  #header-form{
-    margin-top: 6px;
-  }
-
-  #header-form input{
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
-@media all and (max-width: 768px){
+@media all and (max-width: 768px) {
+    
     .container .wrapper .card{
-      width: 95%;
-      margin: 5 auto;
+        width: 95%;
+        margin: 5px auto;
+    }
+
+    .container .wrapper .card .card-header{
+        height: 220px;
     }
   
-    .container .wrapper .card .card-header{
-      height: 220px;
-    }
-
     .container .wrapper .card .card-footer{
         height: auto;
     }
 
-    .header #cart{
-      width: 100%;
+    .header .navbar .cart{
+        width: 100%;
     }
-
 }
+
