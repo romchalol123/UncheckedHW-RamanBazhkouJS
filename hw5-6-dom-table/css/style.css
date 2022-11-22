@@ -13,7 +13,7 @@
         margin-right: 0.5em; }
 .header .cart {
   width: 768px;
-  height: 100vh;
+  height: 95vh;
   display: none; }
   .header .cart .cart-cont {
     padding: 50px 15px 15px;
@@ -28,29 +28,42 @@
     .header .cart .cart-cont h5 {
       padding: 20px 0;
       text-align: right; }
-    .header .cart .cart-cont .list-group .list-group-item {
-      display: flex;
-      flex-direction: row;
-      padding: 5px;
-      height: 62px; }
-      .header .cart .cart-cont .list-group .list-group-item .photo-cont {
-        width: 50px;
-        height: 50px;
-        overflow: hidden;
-        text-align: center;
-        border-radius: 3px; }
-        .header .cart .cart-cont .list-group .list-group-item .photo-cont .cartItem-title-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover; }
-      .header .cart .cart-cont .list-group .list-group-item .cartItem-title {
-        padding: 13px; }
-      .header .cart .cart-cont .list-group .list-group-item .amount-btn {
-        width: 40px;
-        height: 40px;
-        margin: 5px; }
-      .header .cart .cart-cont .list-group .list-group-item .btn-danger {
-        margin: 5px; }
+    .header .cart .cart-cont .ul-cont {
+      max-height: 80%;
+      overflow-y: scroll; }
+      .header .cart .cart-cont .ul-cont .list-group .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 5px;
+        height: 62px; }
+        .header .cart .cart-cont .ul-cont .list-group .list-group-item .photo-cont {
+          width: 50px;
+          height: 50px;
+          overflow: hidden;
+          text-align: center;
+          border-radius: 3px; }
+          .header .cart .cart-cont .ul-cont .list-group .list-group-item .photo-cont .cartItem-title-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+        .header .cart .cart-cont .ul-cont .list-group .list-group-item .cartItem-title {
+          padding: 13px; }
+        .header .cart .cart-cont .ul-cont .list-group .list-group-item .control-btn-box .amount-btn {
+          width: 30px;
+          height: 30px;
+          margin: 5px;
+          border-radius: 50%;
+          padding: 0;
+          padding-bottom: 2px; }
+        .header .cart .cart-cont .ul-cont .list-group .list-group-item .control-btn-box span {
+          margin: 5px 0;
+          padding: 12px;
+          font-size: 14px;
+          height: calc(100% - 10px); }
+        .header .cart .cart-cont .ul-cont .list-group .list-group-item .control-btn-box .btn-danger {
+          margin: 5px;
+          padding: 7px; }
     .header .cart .cart-cont .place-holder {
       text-align: center;
       padding: 40px; }

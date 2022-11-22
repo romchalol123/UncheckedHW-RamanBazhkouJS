@@ -10,8 +10,15 @@ const contextMenu = document.querySelector('.context-menu');
 const card = document.querySelector('.card');
 const cardBtn = document.querySelector('.card-btn');
 const form = document.getElementById('search-form');
+const input = document.getElementById('search-input');
 const ul = document.querySelector('.list-group');
+const li = document.querySelector('.list-group-item');
 const cost = document.querySelector('.total-cost');
+const emptyCartPH = document.querySelector('.place-holder');
+const decreaseBtn = document.querySelector('.decr');
+const increaseBtn = document.querySelector('.incr');
+const removeItemBtn = document.querySelector('.btn-danger');
+const badge = document.getElementById('badge');
 
 function createCard(product){
     const cardHeader = createElement('div', null, ['card-header'], null);
@@ -48,7 +55,7 @@ function createCard(product){
 }
 
 function createCartItem(product){
-  const cartItem = createElement('li', null, ['list-group-item'], null);
+  const cartItem = createElement('li', [{ property: 'id', value:`${product.id}` }], ['list-group-item'], null);
   const imageCont = createElement('div', null, ['photo-cont'], null);
 
   const imgAttributes = [
@@ -65,14 +72,21 @@ function createCartItem(product){
 
   const title = createElement('p', null, ['cartItem-title'], product.title);
 
+  const control = createElement('div', null, ['control-btn-box'], null);
+
   const buttonItemAmountDecr = createElement('button', [{ property: 'type', value: 'button'}], ['btn', 'btn-secondary','amount-btn','decr'], '-');
   const buttonItemAmountIncr = createElement('button', [{ property: 'type', value: 'button'}], ['btn', 'btn-secondary','amount-btn','incr'], '+');
-  const badge = createElement('span', null, ['badge', 'bg-primary'], null);
+  const badge = createElement('span', [{ property: 'id', value: 'badge'}], ['badge', 'bg-primary'], `${product.amount} x ${product.price}`);
 
-  const removeBtn = createElement('button', [{ property: 'type', value: 'button'}], ['btn','btn-danger'], 'Remove from order')
+  const removeBtn = createElement('button', [{ property: 'type', value: 'button'}], ['btn','btn-danger'], 'Remove from order'); 
 
   imageCont.append(image);
-  cartItem.append(imageCont, title, buttonItemAmountDecr, badge, buttonItemAmountIncr, removeBtn);
+  control.append(buttonItemAmountDecr, badge, buttonItemAmountIncr, removeBtn);
+  cartItem.append(imageCont, title, control);
+
+  if (product.amount === 1){
+    buttonItemAmountDecr.setAttribute('disabled', '');
+  }
 
   return cartItem;
 }
