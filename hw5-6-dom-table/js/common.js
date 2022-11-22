@@ -21,3 +21,27 @@ function createElement(
   
     return element;
   }
+
+function calculateCost(cartList){
+  let cost = 0;
+  if (!cartList.length) {
+    return cost;
+  } else {
+    for (let i = 0; i < cartList.length; i++){
+      let sum = cartList[i].price * cartList[i].amount;
+      cost += sum;
+    }
+    return cost;
+  }
+}
+
+function convertCostToCurrency(cost){
+  res = cost.toFixed(2);
+  resStr = res.toString();
+
+  if(res < 10){
+    return '0' + resStr;
+  } else{
+    return resStr;
+  }
+}

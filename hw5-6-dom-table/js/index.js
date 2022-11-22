@@ -2,6 +2,9 @@ let products;
 let cartList = [];
 let totalCost = 0;
 
+cartBtn.textContent = `Your cart - ${convertCostToCurrency(totalCost)}$`;
+cost.textContent = `Total cost: ${convertCostToCurrency(totalCost)}$`; 
+
 fetch('https://dummyjson.com/products')
   .then((res) => res.json())
   .then((data) => {
@@ -9,30 +12,6 @@ fetch('https://dummyjson.com/products')
 
     return createCatalog(products);
   });
-
-function calculateCost(cartList){
-  let cost = 0;
-  if (!cartList.length) {
-    return cost;
-  } else {
-    for (let i = 0; i < cartList.length; i++){
-      let sum = cartList[i].price * cartList[i].amount;
-      cost += sum;
-    }
-    return cost;
-  }
-}
-
-function convertCostToCurrency(cost){
-  res = cost.toFixed(2);
-  resStr = res.toString();
-
-  if(res < 10){
-    return '0' + resStr;
-  } else{
-    return resStr;
-  }
-}
 
 function createCatalog(productsList){
   productsList.forEach((product) => {
@@ -83,10 +62,10 @@ function createCartCatalog(element, cartList){
 
     element.append(card);
   });
+
 }
 
-
-form.addEventListener('submit', (event) => {
+function searchCards(event) {
   event.preventDefault();
   const searchReq = input.value.trim().toLowerCase();
 
@@ -115,21 +94,11 @@ form.addEventListener('submit', (event) => {
   wrapper.innerHTML = '';
   createCatalog(newList);
   input.value = '';
-});
+}
 
-cartCloseBtn.addEventListener('click', () => {
-  cart.style.display = 'none';
-});
-
-menuBtn.addEventListener('click', showHideMenu);
-
-cartBtn.addEventListener('click', () => {
-  cart.style.display = 'block';
-});
-
-wrapper.addEventListener('click', (event) => {
+function addCartItem(event){
   let id = event.target.offsetParent.id;
-  
+    
   addItemToCart(id);
 
   ul.innerHTML = '';
@@ -145,40 +114,63 @@ wrapper.addEventListener('click', (event) => {
   createCartCatalog(ul, cartList);
 
   cartBtn.textContent = `Your cart - ${convertCostToCurrency(calculateCost(cartList))}$`;
-  cost.textContent = `Total cost: ${convertCostToCurrency(calculateCost(cartList))}$`;  
-});
+  cost.textContent = `Total cost: ${convertCostToCurrency(calculateCost(cartList))}$`;
+}
 
-cartBtn.textContent = `Your cart - ${convertCostToCurrency(totalCost)}$`;
-cost.textContent = `Total cost: ${convertCostToCurrency(totalCost)}$`;  
+function cartBtnAction(event){
+  let totalCost = calculateCost(cartList);
 
-ul.addEventListener('click', (event) => {
   let itemID = event.path[2].id;
   let buttonClasses = event.target.classList;
-  console.log(itemID);
+  let badge = event.path[1].childNodes[1];
+  let decrBtn = event.path[1].childNodes[0];
 
   let element = cartList.find((product) => {
     return product.id === parseInt(itemID);
   })
 
-  console.log(element);
-
   if(buttonClasses.contains('incr')){
     element.amount++;
+    totalCost += element.price;
     badge.textContent = `${element.amount} x ${element.price}`;
+    if (element.amount > 1){
+      decrBtn.removeAttribute('disabled');
+    }
   } else if(buttonClasses.contains('decr')){
     element.amount--;
+    totalCost -= element.price;
     badge.textContent = `${element.amount} x ${element.price}`;
-  } else if(buttonClasses.contains('btn-danger')){
-    cartList.splice(cartList.indexOf(element), 1);
-
-    if(li.id === itemID){
-      ul.remove(li);
+    if (element.amount === 1){
+      decrBtn.setAttribute('disabled', '');
     }
-    
+  } else if(buttonClasses.contains('btn-danger')){
+    totalCost -= element.price * element.amount;
+
   }
-  console.log(element.amount);
-  
+
+  ul.textContent = '';
+
+  createCartCatalog(ul, cartList);
+   
+  cartBtn.textContent = `Your cart - ${convertCostToCurrency(totalCost)}$`;
+  cost.textContent = `Total cost: ${convertCostToCurrency(totalCost)}$`; 
+}
+
+form.addEventListener('submit', searchCards);
+
+cartCloseBtn.addEventListener('click', () => {
+  cart.style.display = 'none';
 });
+
+menuBtn.addEventListener('click', showHideMenu);
+
+cartBtn.addEventListener('click', () => {
+  cart.style.display = 'block';
+});
+
+wrapper.addEventListener('click', addCartItem);
+
+ul.addEventListener('click', cartBtnAction);
 
 
 

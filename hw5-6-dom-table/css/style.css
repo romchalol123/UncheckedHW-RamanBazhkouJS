@@ -30,7 +30,7 @@
       text-align: right; }
     .header .cart .cart-cont .ul-cont {
       max-height: 80%;
-      overflow-y: scroll; }
+      overflow-y: auto; }
       .header .cart .cart-cont .ul-cont .list-group .list-group-item {
         display: flex;
         justify-content: space-between;
