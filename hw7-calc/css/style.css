@@ -1,0 +1,70 @@
+body {
+  background: #d9d9e9; }
+  body .calc-body {
+    width: 480px;
+    height: 640px;
+    margin: 20px auto;
+    box-shadow: 0 0 22px 6px #404040;
+    background-color: #313131;
+    border-radius: 10px;
+    overflow: hidden; }
+    body .calc-body form {
+      height: 25%;
+      display: flex;
+      justify-content: space-between; }
+      body .calc-body form #numStr {
+        outline: none;
+        height: 100%;
+        width: 100%;
+        border: none;
+        background: transparent;
+        color: #ededed;
+        font-size: 75px;
+        font-weight: 200;
+        font-family: "Nunito Sans", sans-serif;
+        text-align: right;
+        padding: 40px 10px 0; }
+        body .calc-body form #numStr::-webkit-outer-spin-button, body .calc-body form #numStr::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0; }
+    body .calc-body .btn-group {
+      height: 75%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0 0 15px 15px;
+      display: flex;
+      justify-content: space-evenly; }
+      body .calc-body .btn-group .row {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 19.5%;
+        margin: 0; }
+        body .calc-body .btn-group .row .btn {
+          width: 24.48%;
+          background: #656565;
+          color: #e6e6e6;
+          border-radius: 0;
+          font-weight: 300;
+          font-family: "Nunito Sans", sans-serif;
+          font-size: 42px; }
+          body .calc-body .btn-group .row .btn.option {
+            background: #454545;
+            color: #b6b6b6; }
+          body .calc-body .btn-group .row .btn.command {
+            background: #fea00c;
+            color: #fff7dc; }
+          body .calc-body .btn-group .row .btn.lrg {
+            width: 49.4%;
+            margin-left: 0.2px;
+            border-radius: 0 0 0 8px; }
+          body .calc-body .btn-group .row .btn.point[disabled] {
+            background: srgb(101, 101, 101, 0.1);
+            border: none; }
+          body .calc-body .btn-group .row .btn.res {
+            border-radius: 0 0 8px 0; }
+          body .calc-body .btn-group .row .btn[disabled] {
+            border: none; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="icon" href="/img/title.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="css/media.css" rel="stylesheet">
+    <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+    <script defer src="js/common.js"></script>
+    <script defer src="js/dom.js"></script>
+    <script defer src="js/index.js"></script>
+</head>
+<body>
+    <div class="calc-body">
+        <form>
+            <input id="numStr" type="text" value="0" maxlength=10 onkeypress="return event.charCode >= 48 && event.charCode <= 57" autofocus>
+        </form>
+
+        <div class="btn-group">
+            <div class="row">
+                <button type="button" class="btn option clear">C</button>
+                <button type="button" class="btn option convert">+/-</button>
+                <button type="button" class="btn option percent">&#37;</button>
+                <button type="button" class="btn command divis">&#247;</button>
+            </div>
+            
+            <div class="row">
+                <button type="button" class="btn num">7</button>
+                <button type="button" class="btn num">8</button>
+                <button type="button" class="btn num">9</button>
+                <button type="button" class="btn command mult">&#215;</button>
+            </div>
+            
+            <div class="row">
+                <button type="button" class="btn num">4</button>
+                <button type="button" class="btn num">5</button>
+                <button type="button" class="btn num">6</button>
+                <button type="button" class="btn command subs">&#8722;</button>
+            </div>
+            
+            <div class="row">
+                <button type="button" class="btn num">1</button>
+                <button type="button" class="btn num">2</button>
+                <button type="button" class="btn num">3</button>
+                <button type="button" class="btn command add">&#43;</button>
+            </div>
+            
+            <div class="row">
+                <button type="button" class="btn num lrg">0</button>
+                <button type="button" class="btn num point">.</button>
+                <button type="button" class="btn command res">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

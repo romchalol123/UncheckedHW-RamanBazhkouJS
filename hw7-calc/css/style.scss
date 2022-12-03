@@ -1,0 +1,103 @@
+$elite: 200;
+$lite: 300;
+$reg: 400;
+
+$font: 'Nunito Sans', sans-serif;
+
+body{
+    background: rgb(217, 217, 233);
+
+    .calc-body{
+        width: 480px;
+        height: 640px;
+        margin: 20px auto;
+        box-shadow: 0 0 22px 6px #404040;
+        background-color: rgb(49, 49, 49);
+        border-radius: 10px;
+        overflow: hidden;
+    
+        form{
+            height: 25%;
+            display: flex;
+            justify-content: space-between;
+
+            #numStr{
+                outline: none;
+
+                height: 100%;
+                width: 100%;
+                border: none;
+                background: transparent; 
+                color: rgb(237, 237, 237);
+                font-size: 75px;
+                font-weight: $elite;
+                font-family: $font;
+                text-align: right;
+                padding: 40px 10px 0;
+
+                &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0; 
+                }
+            }
+        }
+    
+        .btn-group{
+            height: 75%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0 0 15px 15px;
+            display: flex;
+            justify-content: space-evenly;
+    
+            .row{
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
+                height: 19.5%;
+                margin: 0;
+    
+                .btn{
+                    width: 24.48%;
+                    background: rgb(101, 101, 101);
+                    color: rgb(230, 230, 230);
+                    border-radius: 0;
+    
+                    font-weight: $lite;
+                    font-family: $font;
+                    font-size: 42px;
+        
+                    &.option{
+                        background: rgb(69, 69, 69);
+                        color: rgb(182, 182, 182);
+                    }
+        
+                    &.command{
+                        background: rgb(254, 160, 12);
+                        color: rgb(255, 247, 220);
+                    }
+    
+                    &.lrg{
+                        width: 49.4%;
+                        margin-left: 0.2px;
+                        border-radius: 0 0 0 8px;
+                    }
+
+                    &.point[disabled]{
+                        background: srgb(101, 101, 101, 0.1);
+                        border: none;
+                    }
+
+                    &.res{
+                        border-radius: 0 0 8px 0;
+                    }
+
+                    &[disabled]{
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
